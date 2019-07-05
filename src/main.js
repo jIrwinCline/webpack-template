@@ -4,6 +4,12 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Doctor } from './doctor-lookup.js';
 
-$(document).ready(function () {
+const doctorSearch = new Doctor();
 
+$(document).ready(function () {
+  $('button').click(function() {
+    doctorSearch.getDoctorData();
+    console.log(doctorSearch)
+    $('#results').append(doctorSearch.doctors[0])
+  })
 });
