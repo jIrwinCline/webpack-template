@@ -1,10 +1,8 @@
 export class Doctor {
   constructor (){
-    this.name;
-    this.specialty;
-    this.address;
-    this.phone;
-    this.newPatients;
+    this.nameSearch;
+    this.issueSearch;
+    this.doctors = [];
 
   }
   getDoctorData(){
@@ -29,6 +27,8 @@ export class Doctor {
       query.then(queryPlaceholder => {
         let docData = JSON.parse(queryPlaceholder);
         console.log(docData);
+        this.doctors.push(docData.data[0])
+        console.log(docData.data[0]);
       })
 
     }
