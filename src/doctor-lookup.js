@@ -25,11 +25,12 @@ export class Doctor {
         let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.515,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb&name=${nameSearch}`;//vvv can i not just say this.nameSearch?
 
         request.onload = function(){
-          if(this.status === 200){
+          if(this.status === 2000){
             resolve(request.response);
             console.log("API Request Successful!");
           }else {
             reject(Error(request.statusText));
+            console.log(request.statusText)
           }
         }
 

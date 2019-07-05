@@ -30,7 +30,7 @@ If the query response doesn't include any doctors (for instance, if no doctors m
 
 ## Known Bugs
 
-mercury years seem to come out as 0 instead of an actual value. Will resolve this shortly.
+Website only prints out correctly for the first doc.
 
 ## Support and contact details
 
