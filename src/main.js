@@ -4,21 +4,23 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Doctor } from './doctor-lookup.js';
 
-const doctorSearch = new Doctor();
+
 
 $(document).ready(function () {
   $('#button1').click(function() {
     $('.buttons').hide();
     $('.issue').show();
   })
-  $('#button1').click(function() {
+  $('#button2').click(function() {
     $('.buttons').hide();
+    $('.name').show();
   })
-  $('button').click(function() {
-  })
-  $('button').click(function() {
+  $('#search').click(function() {
+    let name = $('#name').val();
+    console.log(name)
+    const doctorSearch = new Doctor(name);
     doctorSearch.getDoctorData();
     console.log(doctorSearch)
-    $('#results').append(doctorSearch.doctors[0])
+    doctorSearch.printDocArray()
   })
 });

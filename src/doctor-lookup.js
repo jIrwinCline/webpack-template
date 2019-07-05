@@ -1,6 +1,8 @@
+import $ from 'jquery'
+
 export class Doctor {
-  constructor (){
-    this.nameSearch;
+  constructor (name){
+    this.nameSearch = name;
     this.issueSearch;
     this.doctors = [];
 
@@ -9,7 +11,7 @@ export class Doctor {
       let query = new Promise(function(resolve,reject){
 
         let request = new XMLHttpRequest();
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.515,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb&name=john`;
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.515,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb&name=${this.nameSearch}`;
 
         request.onload = function(){
           if(this.status === 200){
@@ -34,5 +36,12 @@ export class Doctor {
         console.log(docData.data[0]);
       })
 
+    }
+    printDocArray(){
+      for (var i = 0; i < this.doctors.length; i++) {
+        //-------------how else to do this?-----------------
+        $('#results').append(`<li>${this.doctors[i]}</li>`)
+        //--------------------------------------------------
+      }
     }
 }
