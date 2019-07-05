@@ -20,8 +20,11 @@ $(document).ready(function () {
     inputName = $('#name').val();
     console.log(inputName)
     const doctorSearch = new Doctor(inputName);
-    doctorSearch.getDoctorData(inputName);
+    doctorSearch.getDoctorData(inputName); //vvv better way to input these variables?
     console.log(doctorSearch)
-    doctorSearch.printDocArray()
+    $('#print').show();
+    $('#print').click(function() {
+      doctorSearch.printDocArray()
+    })
   })
 });
