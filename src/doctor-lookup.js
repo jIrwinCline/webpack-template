@@ -1,5 +1,15 @@
 import $ from 'jquery'
 import { inputName } from './main.js'
+
+export function DoctorResult(firstName, lastName, address, phone, website, newPatients) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.address = address;
+  this.phone = phone;
+  this.website = website;
+  this.newPatients = true;
+}
+
 export class Doctor {
   constructor (name){
     this.nameSearch = name;
@@ -39,9 +49,17 @@ export class Doctor {
 
     }
     printDocArray(){
-      for (var i = 0; i < this.doctors.length; i++) {
+      for (var i = 0; i < 2/*this.doctors.length*/; i++) {
+
+        console.log(this.doctors[i].profile.first_name)
+        console.log(this.doctors[i].profile.last_name)
+        console.log(this.doctors[i].profile.last_name)
+        // let doctor = new DoctorResult(firstName, lastName, address, phone, newPatients)
         //-------------how else to do this?-----------------
-        $('#results').append(`<li>${this.doctors[i]}</li>`)
+        // for (var n = 0; n < this.doctors[i].practices.length; i++) {
+        //   console.log(this.doctors[i].practices)
+        //   $('#results').append(`<li>${this.doctors.practices}</li>`)
+        // }
         //--------------------------------------------------
       }
     }
