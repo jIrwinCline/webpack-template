@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -16,10 +17,11 @@ module.exports = {
   },
 
   plugins: [
+    new Dotenv(),
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-    title: 'Ping Pong',
+    title: 'doctor-lookup',
     template: './src/index.html',
     inject: 'body'
     })
