@@ -10,12 +10,12 @@
 
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-Returns their age in Mercury years. (A Mercury year is .24 Earth years.)|February, 23rd 1995|101 years|
-Returns their age in Venus years. (A Venus year is .62 Earth years.)|February, 23rd 1995|38.7 years|
-Returns their age in Mars years. (A Mars year is 1.88 Earth years.)|February, 23rd 1995|24 years|
-Returns their age in Jupiter years. (A Jupiter year is 11.86 Earth years.)|February, 23rd 1995|2.02 years|
-Determines how many years a user has left to live on each planet… |February, 23rd 1995 on Mars|25.53 years|
-If a user has already surpassed the average life expectancy, return the number of years they have lived past the life expectancy.| February, 23rd 1900 on Mars| 47 years past life expectancy|
+A user should be able to enter a medical issue to receive a list of doctors in the Portland area that fit the search query| Back pain| Back specialist|
+A user should be able to enter a name to receive a list of doctors in the Portland area that fit the search query.|John|All doctor Johns in the area|
+Any doctors that show up on the search will also have first name, last name, address, phone, website, and accepting new patient status shown.| John Doe | John Doe, johndoe@gmail.com, 123 main street, www.drjohn.com, yes accepts new patients|
+If the API call results in an error (any message not a 200 OK), the application should return a notification that states what the error is.|bad request|Error message|
+If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. |no name matches| 'No doctors match this search, we're sorry|
+
 
 
 ## Setup/Installation Requirements
