@@ -5,16 +5,24 @@
   </head>
   <body>
     <form id="form">
-      <select class="issue" name="issue">
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select>
+      <div class="buttons">
+        <button id="button1" type="button" name="button1">Search by issue</button>
+        <button id="button2" type="button" name="button2">Search by Name</button>
+      </div>
+      <div class="issue">
+        <select id="issue" name="issue">
+          <option value="urologist">urologist</option>
+          <option value="family-practitioner">family practitioner</option>
+          <option value="psychiatrist">psychiatrist</option>
+          <option value="cardiologist">cardiologist</option>
+          <option value="dermatologist">dermatologist</option>
+          <option value="radiologist">radiologist</option>
+        </select>
+      </div>
+      <div class="name">
       <label for="name"</label>
       <input id="name" type="text" placeholder='John Doe'>
+    </div>
       <button type="button">Submit</button>
     </form>
     <ul id="results"></ul>

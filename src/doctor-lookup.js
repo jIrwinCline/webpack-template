@@ -9,7 +9,7 @@ export class Doctor {
       let query = new Promise(function(resolve,reject){
 
         let request = new XMLHttpRequest();
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb`;
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.515,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb&name=john`;
 
         request.onload = function(){
           if(this.status === 200){
@@ -27,7 +27,10 @@ export class Doctor {
       query.then(queryPlaceholder => {
         let docData = JSON.parse(queryPlaceholder);
         console.log(docData);
-        this.doctors.push(docData.data[0])
+        for (var i = 0; i < docData.data.length; i++) {
+          this.doctors.push(docData.data[0])
+
+        }
         console.log(docData.data[0]);
       })
 

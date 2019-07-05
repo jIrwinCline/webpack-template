@@ -7,6 +7,15 @@ import { Doctor } from './doctor-lookup.js';
 const doctorSearch = new Doctor();
 
 $(document).ready(function () {
+  $('#button1').click(function() {
+    $('.buttons').hide();
+    $('.issue').show();
+  })
+  $('#button1').click(function() {
+    $('.buttons').hide();
+  })
+  $('button').click(function() {
+  })
   $('button').click(function() {
     doctorSearch.getDoctorData();
     console.log(doctorSearch)
