@@ -15,6 +15,7 @@ export class Doctor {
     this.nameSearch = name;
     this.issueSearch;
     this.doctors = [];
+    this.doctorsOutput = [];
 
   }
   getDoctorData(nameSearch){
@@ -49,18 +50,21 @@ export class Doctor {
 
     }
     printDocArray(){
-      for (var i = 0; i < 2/*this.doctors.length*/; i++) {
-
-        console.log(this.doctors[i].profile.first_name)
-        console.log(this.doctors[i].profile.last_name)
-        console.log(this.doctors[i].profile.last_name)
-        // let doctor = new DoctorResult(firstName, lastName, address, phone, newPatients)
+      for (var i = 0; i < this.doctors.length; i++) {
+        let firstName = this.doctors[i].profile.first_name;
+        let lastName = this.doctors[i].profile.last_name;
+        let address = `${this.doctors[i].practices[0].visit_address.street}  ${this.doctors[i].practices[0].visit_address.city}  ${this.doctors[i].practices[0].visit_address.state}`;
+        let phone = this.doctors[i].practices[0].phones[0].number;
+        let website = this.doctors[i].practices[0].website;
+        let newPatients = this.doctors[i].practices[0].accepts_new_patients;
+        console.log(firstName, lastName, address, phone, website, newPatients)
+        let doctor = new DoctorResult(firstName, lastName, address, phone, website, newPatients)
+        this.doctorsOutput.push(doctor)
         //-------------how else to do this?-----------------
-        // for (var n = 0; n < this.doctors[i].practices.length; i++) {
-        //   console.log(this.doctors[i].practices)
-        //   $('#results').append(`<li>${this.doctors.practices}</li>`)
-        // }
+        $('#doctorOutput').append(`${firstName} ${lastName}`);
+        $('#doctorOutput').append(`<ul><li>${address}</li><li>${phone}</li><li>${website}</li><li>${newPatients}</li></ul>`);
         //--------------------------------------------------
+
       }
     }
 }
