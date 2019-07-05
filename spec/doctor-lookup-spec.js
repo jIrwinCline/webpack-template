@@ -1,5 +1,6 @@
 import { Doctor } from './../src/doctor-lookup.js';
 import { DoctorResult } from './../src/doctor-lookup,js'
+
 describe('Doctor', function () {
 
 let doctor = new DoctorResult('John', 'Doe', '123 main st, CA', '5555555555', 'www.doc.com', true)
@@ -23,13 +24,12 @@ let doctor = new DoctorResult('John', 'Doe', '123 main st, CA', '5555555555', 'w
   });
 
   it('should  return a notification that states what the error is if the API call results in an error (any message not a 200 OK)', function () {
-
-    expect(triangle.side1).toEqual(3);
+    expect(doctor.getDoctorData()).toThrowError('API Request Unsuccessful');
   });
 
   it('should should return a notification that states that no doctors meet the criteria If the query response doesnt include any doctors (for instance, if no doctors meet the search criteria)', function () {
-
-    expect(triangle.side1).toEqual(3);
+    let noDoctor = new Doctor()
+    expect(noDoctor.getdoctorData()).toBe('No doctors match your search');
   });
 
 

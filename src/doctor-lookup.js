@@ -30,7 +30,7 @@ export class Doctor {
             console.log("API Request Successful!");
           }else {
             reject(Error(request.statusText));
-            console.log(request.statusText)
+            return 'API Request Unsuccessful'
           }
         }
 
@@ -61,6 +61,9 @@ export class Doctor {
         console.log(firstName, lastName, address, phone, website, newPatients)
         let doctor = new DoctorResult(firstName, lastName, address, phone, website, newPatients)
         this.doctorsOutput.push(doctor)
+        if (this.doctorsOutput.length < 1) {
+          return 'No doctors match your search'
+        }
         //-------------how else to do this?-----------------
         $('#doctorOutput').append(`${firstName} ${lastName}`);
         $('#doctorOutput').append(`<ul><li>${address}</li><li>${phone}</li><li>${website}</li><li>${newPatients}</li></ul>`);
