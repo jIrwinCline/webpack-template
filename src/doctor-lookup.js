@@ -1,5 +1,5 @@
 import $ from 'jquery'
-
+import { inputName } from './main.js'
 export class Doctor {
   constructor (name){
     this.nameSearch = name;
@@ -7,11 +7,11 @@ export class Doctor {
     this.doctors = [];
 
   }
-  getDoctorData(){
+  getDoctorData(nameSearch){
       let query = new Promise(function(resolve,reject){
 
         let request = new XMLHttpRequest();
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.515,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb&name=${this.nameSearch}`;
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.515,-122.413,100&user_key=14214fdbcf0212819e35f8e2d4aa67fb&name=${nameSearch}`;
 
         request.onload = function(){
           if(this.status === 200){

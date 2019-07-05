@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Doctor } from './doctor-lookup.js';
 
 
+export let inputName;
 
 $(document).ready(function () {
   $('#button1').click(function() {
@@ -16,10 +17,10 @@ $(document).ready(function () {
     $('.name').show();
   })
   $('#search').click(function() {
-    let name = $('#name').val();
-    console.log(name)
-    const doctorSearch = new Doctor(name);
-    doctorSearch.getDoctorData();
+    inputName = $('#name').val();
+    console.log(inputName)
+    const doctorSearch = new Doctor(inputName);
+    doctorSearch.getDoctorData(inputName);
     console.log(doctorSearch)
     doctorSearch.printDocArray()
   })
