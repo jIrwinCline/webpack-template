@@ -11,12 +11,14 @@ $(document).ready(function () {
   $('#button1').click(function() {
     $('.buttons').hide();
     $('.issue').show();
+    $('#searchIssue').show();
   });
   $('#button2').click(function() {
     $('.buttons').hide();
     $('.name').show();
+    $('#searchDoc').show();
   });
-  $('#search').click(function() {
+  $('#searchDoc').click(function() {
     inputName = $('#name').val();
     console.log(inputName);
     const doctorSearch = new Doctor(inputName);
@@ -27,4 +29,16 @@ $(document).ready(function () {
       doctorSearch.printDocArray();
     });
   });
+  $('#searchIssue').click(function() {
+    let inputIssue = $('#issue').val();
+    const doctorIssue = new Doctor('default')
+    doctorIssue.getDataByIssue(inputIssue); //vvv better way to input these variables?
+    console.log(doctorIssue);
+    $('#print').show();
+    $('#print').click(function() {
+
+      doctorIssue.printDocArray();
+    });
+  });
+
 });
