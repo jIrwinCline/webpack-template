@@ -1,9 +1,9 @@
 import { Doctor } from './../src/doctor-lookup.js';
-import { DoctorResult } from './../src/doctor-lookup,js'
+import { DoctorResult } from './../src/doctor-lookup.js';
 
 describe('Doctor', function () {
 
-let doctor = new DoctorResult('John', 'Doe', '123 main st, CA', '5555555555', 'www.doc.com', true)
+  let doctor = new DoctorResult('John', 'Doe', '123 main st, CA', '5555555555', 'www.doc.com', true);
 
   it('should return specialized doctors that match the inputted issue', function () {
 
@@ -28,7 +28,7 @@ let doctor = new DoctorResult('John', 'Doe', '123 main st, CA', '5555555555', 'w
   });
 
   it('should should return a notification that states that no doctors meet the criteria If the query response doesnt include any doctors (for instance, if no doctors meet the search criteria)', function () {
-    let noDoctor = new Doctor()
+    let noDoctor = new Doctor();
     expect(noDoctor.getdoctorData()).toBe('No doctors match your search');
   });
 
