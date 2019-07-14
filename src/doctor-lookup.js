@@ -80,25 +80,25 @@ export class Doctor {
     });
 
   }
-  printDocArray(){
-
-    for (var i = 0; i < this.doctors.length; i++) {
-      let firstName = this.doctors[i].profile.first_name;
-      let lastName = this.doctors[i].profile.last_name;
-      let address = `${this.doctors[i].practices[0].visit_address.street}  ${this.doctors[i].practices[0].visit_address.city}  ${this.doctors[i].practices[0].visit_address.state}`;
-      let phone = this.doctors[i].practices[0].phones[0].number;
-      let website = this.doctors[i].practices[0].website;
-      let newPatients = this.doctors[i].practices[0].accepts_new_patients;
-      console.log(firstName, lastName, address, phone, website, newPatients);
-      let doctor = new DoctorResult(firstName, lastName, address, phone, website, newPatients);
-      this.doctorsOutput.push(doctor);
-      if (this.doctorsOutput.length < 1) {
-        return 'No doctors match your search';
-      }
-      //-------------how else to do this?-----------------
-      $('#doctorOutput').append(`${firstName} ${lastName}`);
-      $('#doctorOutput').append(`<ul><li>${address}</li><li>${phone}</li><li>${website}</li><li>${newPatients}</li></ul>`);
-      //--------------------------------------------------
-    }
-  }
+  // printDocArray(){
+  //
+  //   for (var i = 0; i < this.doctors.length; i++) {
+  //     let firstName = this.doctors[i].profile.first_name;
+  //     let lastName = this.doctors[i].profile.last_name;
+  //     let address = `${this.doctors[i].practices[0].visit_address.street}  ${this.doctors[i].practices[0].visit_address.city}  ${this.doctors[i].practices[0].visit_address.state}`;
+  //     let phone = this.doctors[i].practices[0].phones[0].number;
+  //     let website = this.doctors[i].practices[0].website;
+  //     let newPatients = this.doctors[i].practices[0].accepts_new_patients;
+  //     console.log(firstName, lastName, address, phone, website, newPatients);
+  //     let doctor = new DoctorResult(firstName, lastName, address, phone, website, newPatients);
+  //     this.doctorsOutput.push(doctor);
+  //     if (this.doctorsOutput.length < 1) {
+  //       return 'No doctors match your search';
+  //     }
+  //     //-------------how else to do this?-----------------
+  //     $('#doctorOutput').append(`${firstName} ${lastName}`);
+  //     $('#doctorOutput').append(`<ul><li>${address}</li><li>${phone}</li><li>${website}</li><li>${newPatients}</li></ul>`);
+  //     //--------------------------------------------------
+  //   }
+  // }
 }
